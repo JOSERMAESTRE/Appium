@@ -12,11 +12,11 @@ public class AppiumDriverConfig {
         AppiumDriver driver = null;
         try {
             DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setCapability("appium:appPackage", "com.wdiodemoapp");
-            capabilities.setCapability("appium:appActivity", ".MainActivity");
-            capabilities.setCapability("appium:udid", "emulator-5554");
-            capabilities.setCapability("appium:automationName", "UiAutomator2");
-            capabilities.setCapability("platformName", "Android");
+            capabilities.setCapability(CapabilitiesConfig.APP_PACKAGE, "com.wdiodemoapp");
+            capabilities.setCapability(CapabilitiesConfig.APP_ACTIVITY, ".MainActivity");
+            capabilities.setCapability(CapabilitiesConfig.DEVICE_ID, "emulator-5554");
+            capabilities.setCapability(CapabilitiesConfig.AUTOMATION_NAME, "UiAutomator2");
+            capabilities.setCapability(CapabilitiesConfig.PLATFORM_NAME, "Android");
 
             URL AppiumServer = new URL("http://localhost:4723");
 
