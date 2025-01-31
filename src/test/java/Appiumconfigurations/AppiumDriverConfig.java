@@ -19,7 +19,7 @@ public class AppiumDriverConfig {
             URL AppiumServer = new URL("http://localhost:4723");
 
             driver = new AppiumDriver(AppiumServer, capabilities);
-            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         } catch (Exception e) {
             System.out.println("Error al iniciar la sesión:");
             e.printStackTrace();
