@@ -1,13 +1,14 @@
 package Appiumconfigurations;
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class AppiumDriverConfig {
 
-    public static AppiumDriver GetAppiumDriver() {
-        AppiumDriver driver = null;
+    public static AndroidDriver GetAppiumDriver() {
+        AndroidDriver driver = null;
         try {
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability(CapabilitiesConfig.APP_PACKAGE, "com.wdiodemoapp");
@@ -18,7 +19,7 @@ public class AppiumDriverConfig {
 
             URL AppiumServer = new URL("http://localhost:4723");
 
-            driver = new AppiumDriver(AppiumServer, capabilities);
+            driver = new AndroidDriver(AppiumServer, capabilities);
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         } catch (Exception e) {
             System.out.println("Error al iniciar la sesión:");
