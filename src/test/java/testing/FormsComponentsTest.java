@@ -5,6 +5,7 @@ import Appiumconfigurations.SwipeActions;
 import Pages.FormsComponentPage;
 import io.appium.java_client.AppiumDriver;
 
+import io.appium.java_client.android.AndroidDriver;
 import org.apache.commons.io.FileUtils;
 
 import org.openqa.selenium.OutputType;
@@ -14,7 +15,7 @@ import java.io.File;
 
 public class FormsComponentsTest {
     public static void main(String[] args) {
-        AppiumDriver driver = AppiumDriverConfig.GetAppiumDriver();
+        AndroidDriver driver = AppiumDriverConfig.GetAppiumDriver();
         FormsComponentPage userPage = new FormsComponentPage(driver);
         userPage.FormActions("Jose R Maeste");
 

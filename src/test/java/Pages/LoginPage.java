@@ -2,6 +2,7 @@ package Pages;
 
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -17,7 +18,7 @@ public class LoginPage extends BasePage {
     private final By AlertMessage = AppiumBy.id("android:id/alertTitle");
     private final By OKButton = AppiumBy.xpath("//*[@text='OK']");
 
-    public LoginPage(AppiumDriver driver) {
+    public LoginPage(AndroidDriver driver) {
         super(driver);
     }
 

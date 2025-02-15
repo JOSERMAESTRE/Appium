@@ -3,6 +3,7 @@ package Pages;
 import Appiumconfigurations.SwipeActions;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -13,7 +14,7 @@ public class SwipePage extends BasePage {
     private final By SwipeLabelLocator = AppiumBy.accessibilityId("Swipe");
     private final By FormTitleLocator = AppiumBy.xpath("//*[@text='Swipe horizontal']");
 
-    public SwipePage(AppiumDriver driver) {
+    public SwipePage(AndroidDriver driver) {
         super(driver);
     }
 

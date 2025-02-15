@@ -3,6 +3,7 @@ package testing;
 import Appiumconfigurations.AppiumDriverConfig;
 import Pages.SwipePage;
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 
@@ -12,7 +13,7 @@ import static java.time.Duration.ofSeconds;
 
 public class SwipeHorizontalTest {
     public static void main(String[] args) throws InterruptedException {
-        AppiumDriver driver = AppiumDriverConfig.GetAppiumDriver();
+        AndroidDriver driver = AppiumDriverConfig.GetAppiumDriver();
         SwipePage swipePage = new SwipePage(driver);
         swipePage.swipeLeft("EXTENDABLE");
 

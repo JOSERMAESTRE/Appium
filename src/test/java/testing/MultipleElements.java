@@ -3,6 +3,7 @@ package testing;
 import Appiumconfigurations.AppiumDriverConfig;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -12,7 +13,7 @@ import java.util.List;
 
 public class MultipleElements {
     public static void main(String[] args) {
-        AppiumDriver driver = AppiumDriverConfig.GetAppiumDriver();
+        AndroidDriver driver = AppiumDriverConfig.GetAppiumDriver();
         WebElement LoginLabel = driver.findElement(AppiumBy.accessibilityId("Login"));
         LoginLabel.click();
 
