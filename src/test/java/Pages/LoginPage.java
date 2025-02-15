@@ -10,12 +10,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class LoginPage extends BasePage {
-    private By LoginLabel = AppiumBy.accessibilityId("Login");
-    private By UsernameLocator = AppiumBy.accessibilityId("input-email");
-    private By PasswordLocator = AppiumBy.accessibilityId("input-password");
-    private By LoginButton = AppiumBy.accessibilityId("button-LOGIN");
-    private By AlertMessage = AppiumBy.id("android:id/alertTitle");
-    private By OKButton = AppiumBy.xpath("//*[@text='OK']");
+    private final By LoginLabel = AppiumBy.accessibilityId("Login");
+    private final By UsernameLocator = AppiumBy.accessibilityId("input-email");
+    private final By PasswordLocator = AppiumBy.accessibilityId("input-password");
+    private final By LoginButton = AppiumBy.accessibilityId("button-LOGIN");
+    private final By AlertMessage = AppiumBy.id("android:id/alertTitle");
+    private final By OKButton = AppiumBy.xpath("//*[@text='OK']");
 
     public LoginPage(AppiumDriver driver) {
         super(driver);
@@ -27,8 +27,8 @@ public class LoginPage extends BasePage {
         type(PasswordLocator, password);
         click(LoginButton);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement successfullMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(AlertMessage));
-        System.out.println("Log-in is: "+ successfullMessage.getText());
+        WebElement successfulMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(AlertMessage));
+        System.out.println("Log-in is: "+ successfulMessage.getText());
         click(OKButton);
 
     }
