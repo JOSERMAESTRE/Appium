@@ -2,17 +2,19 @@ package testing;
 
 import Appiumconfigurations.AppiumDriverConfig;
 import Pages.SwipePage;
-import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
+import io.qameta.allure.Description;
+import io.qameta.allure.Story;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
-
+import org.testng.annotations.Test;
 import java.io.File;
 
-import static java.time.Duration.ofSeconds;
-
+@Story("Valid horizontal Swip")
 public class SwipeHorizontalTest {
-    public static void main(String[] args) throws InterruptedException {
+    @Test
+    @Description("Verify user can move horizontally to elements")
+    public void Swiping() throws InterruptedException {
         AndroidDriver driver = AppiumDriverConfig.GetAppiumDriver();
         SwipePage swipePage = new SwipePage(driver);
         swipePage.swipeLeft("EXTENDABLE");

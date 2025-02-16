@@ -34,7 +34,6 @@ public class AndroidSettingsPage extends BasePage {
                 click(SwitchLocator);
             } else {
                 click(SwitchLocator);
-                click(SwitchLocator);
             }
         } catch (Exception e) {
             throw new RuntimeException(e);

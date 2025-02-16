@@ -1,0 +1,15 @@
+testing\FormsComponentsTest.class
+testing\LoginTest.class
+testing\MultipleElements.class
+Appiumconfigurations\CapabilitiesConfig.class
+Pages\BasePage.class
+Pages\SwipePage.class
+Appiumconfigurations\SwipeActions.class
+testing\SignUpTest.class
+Pages\SignUpPage.class
+LaunchApp.class
+testing\SwipeHorizontalTest.class
+Pages\FormsComponentPage.class
+Pages\LoginPage.class
+Pages\AndroidSettingsPage.class
+Appiumconfigurations\AppiumDriverConfig.class

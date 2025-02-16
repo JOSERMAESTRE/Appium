@@ -6,22 +6,21 @@ import Pages.SignUpPage;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.screenrecording.CanRecordScreen;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
+import io.qameta.allure.Description;
+import io.qameta.allure.Story;
+import org.testng.annotations.Test;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.time.Duration;
 import java.util.Base64;
-
+@Story("Valid Sign Up")
 public class SignUpTest {
-
-    public static void main(String[] args) {
+    @Test
+    @Description("Verify user can signup with valid data")
+    public void SigningUp() {
         AndroidDriver driver = AppiumDriverConfig.GetAppiumDriver();
         ((CanRecordScreen) driver).startRecordingScreen();
         SignUpPage signUpPage = new SignUpPage(driver);
-        signUpPage.SignUp("test@gmail.com","12345678","12345678");
+        signUpPage.SignUp("test@gmail.com", "12345678", "12345678");
         String Video = ((CanRecordScreen) driver).stopRecordingScreen();
 
         byte[] DecodedVideo = Base64.getDecoder().decode(Video);
@@ -31,7 +30,7 @@ public class SignUpTest {
             Path Videopath = Path.of(VideoDir.toString(), String.format("%s-%d.%s", "Test", System.currentTimeMillis(), "mp4"));
             Files.write(Videopath, DecodedVideo);
         } catch (Exception e) {
-           throw new RuntimeException(e);
+            throw new RuntimeException(e);
         }
         AndroidSettingsPage settingsPage = new AndroidSettingsPage(driver);
         settingsPage.WifiActions();
